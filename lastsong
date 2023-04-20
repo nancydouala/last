@@ -4,11 +4,9 @@ use_synth :piano
 intro = "C:/Users/nancy_douala/Downloads/Weezer.wav"
 close = "C:/Users/nancy_douala/Desktop/Weezer - Undone (The Sweater Song) [Vocals Only] 22.wav"
 closing = "C:/Users/nancy_douala/Desktop/Gorillaz - Feel Good Inc (Studio Acapella).wav"
-last = "C:/Users/nancy_douala/Desktop/Weezer - Undone -- The Sweater Song (1) 33.wav"
+last = "C:/Users/nancy_douala/Downloads/Weezer_-_Undone_--_The_Sweater_Song end1.wav"
 
-a = 10
-b = 11
-c = 4
+
 index= 0
 notes = [:d4,:f4,:c5,:b4,:c4,:e4,:as4,:b4,]
 
@@ -72,5 +70,16 @@ live_loop :piano do
 end
 sleep 16
 sample close, amp: 4
-sleep 32
+sleep 33
 sample closing, amp: 4
+sleep 5
+sample :drum_bass_hard , amp:1
+sample :drum_snare_soft, amp:2
+16.times do
+  sample :drum_snare_soft, amp:3
+  sleep 0.10
+end
+sleep 0.10
+sample :drum_bass_hard , amp:1
+sample :drum_snare_soft, amp:3
+sample last
